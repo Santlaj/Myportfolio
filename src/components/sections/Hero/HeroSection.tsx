@@ -154,7 +154,7 @@ const HeroSection: React.FC = () => {
                     </Box>
                 </Box>
 
-                {/* 2. Hero Name - Bernardo Moschen (Gradient 2-Line Bold Text) */}
+                {/* 2. Hero Name - Santlaj (Gradient 2-Line Bold Text) */}
                 <Typography
                     component="h1"
                     sx={{

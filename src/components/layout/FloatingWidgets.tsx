@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Box, Button } from '@mui/material';
 
 export const FloatingWidgets: React.FC = () => {
-    const [likes, setLikes] = useState(8);
+    const [likes, setLikes] = useState(0);
     const [hasLiked, setHasLiked] = useState(false);
     const [showTopBtn, setShowTopBtn] = useState(false);
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            const savedLikes = localStorage.getItem('bm_likes');
-            const savedHasLiked = localStorage.getItem('bm_has_liked');
+            const savedLikes = localStorage.getItem('portfolio_likes');
+            const savedHasLiked = localStorage.getItem('portfolio_has_liked');
             if (savedLikes) setLikes(parseInt(savedLikes, 10));
             if (savedHasLiked === 'true') setHasLiked(true);
 
@@ -25,13 +25,13 @@ export const FloatingWidgets: React.FC = () => {
         if (hasLiked) {
             setLikes((l) => l - 1);
             setHasLiked(false);
-            localStorage.setItem('bm_likes', (likes - 1).toString());
-            localStorage.setItem('bm_has_liked', 'false');
+            localStorage.setItem('portfolio_likes', (likes - 1).toString());
+            localStorage.setItem('portfolio_has_liked', 'false');
         } else {
             setLikes((l) => l + 1);
             setHasLiked(true);
-            localStorage.setItem('bm_likes', (likes + 1).toString());
-            localStorage.setItem('bm_has_liked', 'true');
+            localStorage.setItem('portfolio_likes', (likes + 1).toString());
+            localStorage.setItem('portfolio_has_liked', 'true');
         }
     };
 

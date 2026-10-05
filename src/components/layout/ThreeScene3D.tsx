@@ -322,7 +322,7 @@ export const ThreeScene3D: React.FC = () => {
             // 6. 3D SPATIAL DUST CONSTELLATIONS (PROJECTS TILL LAST)
             // ==========================================
             // 7 columns x 4 rows of spaced 3D particle dust nodes in deep space
-            // PURE WARM GOLDEN AMBER stardust clouds matching bernardomoschen.dev
+            // PURE WARM GOLDEN AMBER stardust clouds
             // (Does NOT spell "BM" - pure aesthetic cosmic stardust)
             const matrixPointsList: number[] = [];
             const matrixColorsList: number[] = [];
@@ -685,7 +685,7 @@ export const ThreeScene3D: React.FC = () => {
                 pointerEvents: 'none',
                 zIndex: 0,
                 overflow: 'hidden',
-                // Subtle radial green atmosphere glow behind the globe, matching bernardomoschen.dev
+                // Subtle radial green atmosphere glow behind the globe
                 background: 'radial-gradient(circle at 50% 48%, rgba(127, 176, 105, 0.15) 0%, rgba(12, 16, 13, 0.95) 60%, #0c100d 100%)',
             }}
         >

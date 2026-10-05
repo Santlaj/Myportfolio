@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 
 const FooterSection: React.FC = () => {
+    const [likes, setLikes] = useState(0);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const updateLikes = () => {
+                const savedLikes = localStorage.getItem('portfolio_likes');
+                if (savedLikes) setLikes(parseInt(savedLikes, 10));
+            };
+            updateLikes();
+            // Listen for storage changes (when like button is clicked)
+            window.addEventListener('storage', updateLikes);
+            // Also poll briefly to catch same-tab updates
+            const interval = setInterval(updateLikes, 1000);
+            return () => {
+                window.removeEventListener('storage', updateLikes);
+                clearInterval(interval);
+            };
+        }
+    }, []);
+
     return (
         <Box
             component="footer"
@@ -56,7 +76,7 @@ const FooterSection: React.FC = () => {
                     opacity: 0.6,
                 }}
             >
-                ♡ 8 people liked this
+                {likes > 0 ? `♥ ${likes} ${likes === 1 ? 'person' : 'people'} liked this` : '♡ Be the first to like this'}
             </Typography>
         </Box>
     );

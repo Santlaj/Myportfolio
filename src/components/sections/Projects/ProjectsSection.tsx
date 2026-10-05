@@ -351,7 +351,7 @@ const ProjectsSection: React.FC = () => {
                                     {project.description}
                                 </Typography>
 
-                                {/* Technologies Chips (Orange outline pills matching bernardomoschen.dev) */}
+                                {/* Technologies Chips (Orange outline pills) */}
                                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.9, mb: 3 }}>
                                     {project.technologies.map(tech => (
                                         <Box
