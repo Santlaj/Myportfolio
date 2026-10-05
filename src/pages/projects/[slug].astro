@@ -1,0 +1,13 @@
+---
+import { getAllCaseStudies } from '../../components/data/caseStudiesData';
+
+export async function getStaticPaths() {
+  const allStudies = getAllCaseStudies();
+  return allStudies.map((study) => ({
+    params: { slug: study.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+return Astro.redirect(`/case-studies/${slug}`, 301);
+---
