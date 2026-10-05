@@ -15,7 +15,6 @@ import {
     Code,
     Terminal,
 } from '@mui/icons-material';
-import { ThemeToggle } from '../../theme';
 
 interface MenuItem {
     label: string;

@@ -10,8 +10,7 @@ import {
 import MobileNavigation from './MobileNavigation';
 import DesktopNavigation from './DesktopNavigation';
 import BrandLogo from './BrandLogo';
-import ScrollToTopButton from './ScrollToTopButton';
-import { menuItems, scrollToSection, scrollToTop } from './utils';
+import { menuItems, scrollToSection } from './utils';
 
 const NavigationContainer: React.FC = () => {
     const theme = useTheme();
@@ -98,7 +97,6 @@ const NavigationContainer: React.FC = () => {
                     )}
                 </Toolbar>
             </AppBar>
-            <ScrollToTopButton show={trigger} onClick={scrollToTop} />
         </>
     );
 };

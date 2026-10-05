@@ -12,18 +12,24 @@ export const menuItems: MenuItem[] = [
 ];
 
 export const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.replace('#', ''));
+    const cleanId = sectionId.replace('#', '');
+    const element = document.getElementById(cleanId);
     if (element) {
         const navbarHeight = window.innerWidth < 900 ? 64 : 72; // Match Toolbar heights
         const additionalOffset = 24; // Extra breathing room
         const totalOffset = navbarHeight + additionalOffset;
         
-        const elementPosition = element.offsetTop - totalOffset;
-        
-        window.scrollTo({
-            top: elementPosition,
-            behavior: 'smooth'
-        });
+        const lenis = typeof window !== 'undefined' ? (window as any).lenis : null;
+        if (lenis && typeof lenis.scrollTo === 'function') {
+            lenis.scrollTo(element, { offset: -totalOffset, duration: 1.2 });
+        } else {
+            const rect = element.getBoundingClientRect();
+            const elementPosition = rect.top + window.scrollY - totalOffset;
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
+        }
     }
 };
 

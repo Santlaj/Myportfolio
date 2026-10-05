@@ -233,7 +233,7 @@ const HeroSection: React.FC = () => {
                         animation: 'fadeInUp 0.8s ease-out 0.3s both',
                     }}
                 >
-                    {/* Primary Button: Explore Projects */}
+                    {/* Primary Button: See What I've Shipped */}
                     <Button
                         variant="contained"
                         onClick={() => scrollToSection('projects-timeline')}
@@ -256,7 +256,7 @@ const HeroSection: React.FC = () => {
                             },
                         }}
                     >
-                        Explore Projects
+                        See What I've Shipped
                     </Button>
 
                     {/* Secondary Button: Download Resume */}
