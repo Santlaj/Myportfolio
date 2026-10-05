@@ -1,6 +1,6 @@
 export const siteConfig = {
-  domain: "santlaj.dev",
-  url: "https://santlaj.dev",
+  domain: "santlaj.in",
+  url: "https://santlaj.in",
 
   email: "santlaj.dev@gmail.com",
 
