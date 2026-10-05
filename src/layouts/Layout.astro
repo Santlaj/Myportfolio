@@ -22,6 +22,72 @@ const {
 const siteUrl = getSiteUrl();
 const fullUrl = new URL(canonical, siteUrl);
 const fullOgImage = new URL(ogImage, siteUrl);
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": siteConfig.name,
+  "jobTitle": siteConfig.title,
+  "url": siteConfig.url,
+  "image": new URL(siteConfig.profileImage, siteUrl).toString(),
+  "email": siteConfig.email,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    siteConfig.linkedin,
+    siteConfig.github
+  ],
+  "worksFor": {
+    "@type": "EducationalOrganization",
+    "name": "Lovely Professional University",
+    "url": "https://www.lpu.in"
+  },
+  "description": siteConfig.description,
+  "knowsAbout": [
+    "C++",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "PostgreSQL",
+    "Redis",
+    "Prisma",
+    "Supabase",
+    "SQL",
+    "Data Structures & Algorithms",
+    "REST APIs",
+    "Git"
+  ],
+  "alumniOf": {
+    "@type": "EducationalOrganization",
+    "name": "Lovely Professional University"
+  },
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "degree",
+      "educationalLevel": "Bachelor"
+    }
+  ]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": `${siteConfig.name} - Portfolio`,
+  "url": siteConfig.url,
+  "description": siteConfig.description,
+  "author": {
+    "@type": "Person",
+    "name": siteConfig.name
+  },
+  "inLanguage": "en-US",
+  "copyrightYear": "2026",
+  "genre": "Portfolio"
+};
 ---
 
 <!doctype html>
@@ -109,78 +175,9 @@ const fullOgImage = new URL(ogImage, siteUrl);
     </noscript>
 
     <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": siteConfig.name,
-        "jobTitle": siteConfig.title,
-        "url": siteConfig.url,
-        "image": new URL(siteConfig.profileImage, siteUrl).toString(),
-        "email": siteConfig.email,
-        "telephone": "+1-XXX-XXX-XXXX",
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "IN"
-        },
-        "sameAs": [
-          siteConfig.linkedin,
-          siteConfig.github
-        ],
-        "worksFor": {
-          "@type": "EducationalOrganization",
-          "name": "Lovely Professional University",
-          "url": "https://www.lpu.in"
-        },
-        "description": "B.Tech Computer Science & Engineering student at Lovely Professional University focused on software engineering, backend systems, and data structures & algorithms.",
-        "knowsAbout": [
-          "C++",
-          "JavaScript",
-          "React",
-          "Next.js",
-          "Node.js",
-          "Express.js",
-          "PostgreSQL",
-          "Redis",
-          "Prisma",
-          "Supabase",
-          "SQL",
-          "Java",
-          "Data Structures & Algorithms",
-          "REST APIs",
-          "Git"
-        ],
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "Lovely Professional University"
-        },
-        "hasCredential": [
-          {
-            "@type": "EducationalOccupationalCredential",
-            "credentialCategory": "degree",
-            "educationalLevel": "Bachelor"
-          }
-        ]
-      }
-    </script>
-
-    <!-- Additional structured data for portfolio -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": `${siteConfig.name} - Portfolio`,
-        "url": siteConfig.url,
-        "description": siteConfig.description,
-        "author": {
-          "@type": "Person",
-          "name": siteConfig.name
-        },
-        "inLanguage": "en-US",
-        "copyrightYear": "2024",
-        "genre": "Portfolio"
-      }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  </head>
   <body>
     {showPreloader && (
       <div id="system-preloader" aria-hidden="true">
