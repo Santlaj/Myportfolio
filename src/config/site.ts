@@ -5,27 +5,24 @@ export const siteConfig = {
   email: "santlaj.dev@gmail.com",
 
   name: "Santlaj Kumar",
-  title: "Software Engineer & Full-Stack Developer",
+  siteName: "Santlaj",
+  alternateNames: ["Santlaj Kumar", "SantlajOS", "santlaj.in"],
+  title: "Software Developer",
 
   github: "https://github.com/Santlaj",
   linkedin: "https://www.linkedin.com/in/santlaj-kumar-mehta-23541a320/",
 
   description:
-    "Santlaj Kumar is a B.Tech Computer Science & Engineering student at Lovely Professional University focused on software engineering, backend systems, DSA, and practical products.",
+    "Santlaj Kumar is a software developer building scalable backend systems, full-stack applications, APIs, and developer-focused products.",
   keywords: [
     "Santlaj Kumar",
-    "Software Engineer",
-    "Full-Stack Developer",
-    "C++",
-    "React",
-    "Next.js",
-    "Node.js",
-    "Express.js",
-    "PostgreSQL",
-    "Redis",
-    "Prisma",
-    "LeetCode",
-    "LPU",
+    "Santlaj",
+    "Software Developer",
+    "Backend Developer",
+    "Full Stack Developer",
+    "JavaScript Developer",
+    "Next.js Developer",
+    "Node.js Developer",
   ],
 
   profileImage: "/profile-photo.png",

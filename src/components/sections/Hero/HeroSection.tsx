@@ -182,14 +182,31 @@ const HeroSection: React.FC = () => {
                     <Box component="span" sx={{ display: 'block' }}>{PERSONAL_INFO.lastName}</Box>
                 </Typography>
 
-                {/* 3. Monospace Subtitle Tagline */}
+                {/* 3. Primary Role / Title */}
+                <Typography
+                    component="h2"
+                    sx={{
+                        fontFamily: "'Inter', sans-serif",
+                        fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' },
+                        fontWeight: 700,
+                        color: '#f3f4f6',
+                        mt: { xs: 2, sm: 2.5 },
+                        mb: 0.8,
+                        letterSpacing: '-0.02em',
+                        animation: 'fadeInUp 0.8s ease-out 0.15s both',
+                    }}
+                >
+                    {PERSONAL_INFO.title}
+                </Typography>
+
+                {/* 4. Subtitle Tagline */}
                 <Typography
                     sx={{
                         fontFamily: "'JetBrains Mono', 'Roboto Mono', monospace",
-                        fontSize: { xs: '0.85rem', sm: '1.05rem', md: '1.18rem' },
+                        fontSize: { xs: '0.85rem', sm: '1rem', md: '1.1rem' },
                         fontWeight: 500,
                         color: '#e07a5f',
-                        mt: { xs: 2, sm: 2.5 },
+                        mt: 0,
                         mb: 1.8,
                         letterSpacing: '-0.01em',
                         textShadow: '0 0 16px rgba(224, 122, 95, 0.4)',

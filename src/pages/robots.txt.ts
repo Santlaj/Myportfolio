@@ -7,6 +7,7 @@ Allow: /
 
 # Sitemaps
 Sitemap: ${siteConfig.url}/sitemap-index.xml
+Sitemap: ${siteConfig.url}/sitemap.xml
 
 # Optimize crawling
 Crawl-delay: 1

@@ -38,9 +38,9 @@ export interface AboutMeData {
 
 export const aboutMe: AboutMeData = {
     title: 'About Santlaj',
-    lead: 'A FullStack developer focused on building practical, reliable, and scalable software.',
+    lead: 'Software developer focused on building practical, reliable, and scalable software.',
     paragraphs: [
-        'Specializes in backend development, full-stack applications, APIs, databases, and problem solving, with hands-on experience building real-world products.',
+        'Specialized in backend development, full-stack applications, APIs, databases, and problem solving, with hands-on experience building real-world products.',
         'Focused on strong engineering fundamentals, clean architecture, and continuously improving through building and solving.',
     ],
     academicStatus: {

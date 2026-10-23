@@ -1,0 +1,21 @@
+{
+  "name": "Santlaj",
+  "short_name": "Santlaj",
+  "description": "Santlaj Kumar — Software Developer & Full-Stack Engineer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c100d",
+  "theme_color": "#7fb069",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

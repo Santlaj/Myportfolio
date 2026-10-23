@@ -65,7 +65,7 @@ const BrandLogo: React.FC<BrandLogoProps> = ({ trigger, onClick }) => {
                         transition: 'opacity 0.3s ease',
                     }}
                 >
-                    {'{ fullstack.engineer }'}
+                    {'{ software.developer }'}
                 </Typography>
             </Box>
         </Box>

@@ -26,67 +26,56 @@ const fullOgImage = new URL(ogImage, siteUrl);
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://santlaj.in/#person",
   "name": siteConfig.name,
-  "jobTitle": siteConfig.title,
+  "givenName": "Santlaj",
+  "familyName": "Kumar",
+  "alternateName": ["Santlaj", "SantlajOS", "santlaj.in"],
   "url": siteConfig.url,
   "image": new URL(siteConfig.profileImage, siteUrl).toString(),
-  "email": siteConfig.email,
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "IN"
-  },
-  "sameAs": [
-    siteConfig.linkedin,
-    siteConfig.github
-  ],
-  "worksFor": {
-    "@type": "EducationalOrganization",
-    "name": "Lovely Professional University",
-    "url": "https://www.lpu.in"
-  },
+  "jobTitle": siteConfig.title,
   "description": siteConfig.description,
+  "sameAs": [
+    siteConfig.github,
+    siteConfig.linkedin
+  ],
   "knowsAbout": [
-    "C++",
+    "Software Development",
+    "Backend Systems",
+    "Full Stack Development",
+    "APIs",
+    "Databases",
     "JavaScript",
+    "TypeScript",
     "React",
     "Next.js",
     "Node.js",
     "Express.js",
     "PostgreSQL",
     "Redis",
-    "Prisma",
-    "Supabase",
-    "SQL",
-    "Data Structures & Algorithms",
-    "REST APIs",
-    "Git"
-  ],
-  "alumniOf": {
-    "@type": "EducationalOrganization",
-    "name": "Lovely Professional University"
-  },
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "degree",
-      "educationalLevel": "Bachelor"
-    }
+    "Prisma"
   ]
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": `${siteConfig.name} - Portfolio`,
+  "@id": "https://santlaj.in/#website",
+  "name": siteConfig.siteName,
+  "alternateName": siteConfig.alternateNames,
   "url": siteConfig.url,
   "description": siteConfig.description,
-  "author": {
+  "publisher": {
     "@type": "Person",
+    "@id": "https://santlaj.in/#person",
     "name": siteConfig.name
   },
-  "inLanguage": "en-US",
-  "copyrightYear": "2026",
-  "genre": "Portfolio"
+  "author": {
+    "@type": "Person",
+    "@id": "https://santlaj.in/#person",
+    "name": siteConfig.name
+  },
+  "inLanguage": "en-US"
 };
 ---
 
@@ -105,8 +94,11 @@ const websiteSchema = {
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content="Santlaj Kumar" />
+    <meta name="application-name" content="Santlaj" />
+    <meta name="apple-mobile-web-app-title" content="Santlaj" />
     <link rel="canonical" href={fullUrl} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -118,9 +110,9 @@ const websiteSchema = {
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Santlaj Kumar - Software Engineer & Full-Stack Developer Portfolio"
+      content="Santlaj — Software Developer"
     />
-    <meta property="og:site_name" content="Santlaj Kumar - Portfolio" />
+    <meta property="og:site_name" content="Santlaj" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter -->
@@ -131,7 +123,7 @@ const websiteSchema = {
     <meta name="twitter:image" content={fullOgImage} />
     <meta
       name="twitter:image:alt"
-      content="Santlaj Kumar - Software Engineer & Full-Stack Developer Portfolio"
+      content="Santlaj — Software Developer"
     />
 
     <!-- Favicon and Icons -->
